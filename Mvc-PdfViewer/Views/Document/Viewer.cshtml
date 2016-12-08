@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "PdfViewer";
+}
+
+<div class="jumbotron">
+    <h3>Pdf Döküman Ekleyiniz?</h3>
+@using (Html.BeginForm("Viewer", "Document", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="col-md-10">
+        <input type="file" name="Doc" />
+
+    </div>
+    
+            <input type="submit" value="Ekle" class="btn btn-success" />
+      
+}
+</div>
+
+<div class="row">
+    <iframe src="/web/viewer.html?file=@ViewBag.DocUrl" style="width:100%;height:600px;border: none;" allowfullscreen webkitallowfullscreen></iframe>
+
+</div>
+
